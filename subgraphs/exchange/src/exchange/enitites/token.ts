@@ -28,6 +28,7 @@ export function getToken(address: Address): Token | null {
       return null
     }
 
+    token.whitelistPairs = []
     token.decimals = decimals
     token.derivedETH = BIG_DECIMAL_ZERO
     token.volume = BIG_DECIMAL_ZERO
@@ -52,6 +53,15 @@ export function getSymbol(address: Address): string {
   }
   if (address.toHex() == '0x5dbcf33d8c2e976c6b560249878e6f1491bca25c') {
     return 'yUSD'
+  }
+  if (address.toHex() == '0x0309c98b1bffa350bcb3f9fb9780970ca32a5060') {
+    return 'BDI'
+  }
+  if (address.toHex() == '0x3fa729b4548becbad4eab6ef18413470e6d5324c') {
+    return 'MOVE'
+  }
+  if (address.toHex() == '0xe95a203b1a91a908f9b9ce46459d101078c2c3cb') {
+    return 'aETHc'
   }
 
   const contract = ERC20.bind(address)
@@ -87,6 +97,15 @@ export function getName(address: Address): string {
   }
   if (address.toHex() == '0xf94b5c5651c888d928439ab6514b93944eee6f48') {
     return 'Yield App'
+  }
+  if (address.toHex() == '0x0309c98b1bffa350bcb3f9fb9780970ca32a5060') {
+    return 'BasketDAO DeFi Index'
+  }
+  if (address.toHex() == '0x3fa729b4548becbad4eab6ef18413470e6d5324c') {
+    return 'Mover'
+  }
+  if (address.toHex() == '0xe95a203b1a91a908f9b9ce46459d101078c2c3cb') {
+    return 'Ankr Eth2 Reward Bearing Certificate'
   }
 
   const contract = ERC20.bind(address)
